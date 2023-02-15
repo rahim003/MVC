@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Hospitals</title>
+</head>
+<body>
+<h1>All Hospitals</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hospital : ${hospitals}">
+        <td th:text="${hospital.id}"></td>
+        <td th:text="${hospital.name}"></td>
+        <td th:text="${hospital.address}"></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/hospitals/new}">Add New Hospital</a>
+</body>
+</html>
